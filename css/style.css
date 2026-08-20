@@ -722,7 +722,7 @@
     0%,100%{opacity:.45;transform:scaleY(.92);}
     50%{opacity:1;transform:scaleY(1);}
   }
-  @media (max-width:900px){.about-3d{height:260px;border-radius:18px;}}
+  @media (max-width:900px){.about-3d{height:260px;border-radius:18px;width: 100%;}}
 
   /* ---------- about ---------- */
   .about-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;}
