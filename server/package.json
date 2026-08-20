@@ -1,0 +1,13 @@
+{
+  "name": "sudyar-auth-server",
+  "version": "1.0.0",
+  "description": "Minimal local backend example for Sudyar — verifies Google sign-in server-side and creates real user accounts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cookie-parser": "^1.4.6"
+  }
+}

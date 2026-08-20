@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#152A20">
+<title>سودیار | حسابداری بدون لمس برای فروشنده‌های آنلاین</title>
+<meta name="description" content="سودیار از روی فروش و گزارش بانکی‌ت، خودش حساب و کتاب کسب‌وکارت رو می‌سازه. بدون ورود دستی، بدون دانش حسابداری.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.anim-right,.anim-left,.anim-stagger>*{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<a href="#hero" class="back-to-top" id="backToTop" aria-label="بازگشت به بالای صفحه">
+  <img src="assets/icons/back-to-top.png" alt="" width="30" height="32">
+</a>
+
+<nav class="side-dots" id="sideDots" aria-label="پیمایش بین بخش‌ها">
+  <button type="button" class="dot-item" data-target="hero"><span class="dot-label">خانه</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="problem"><span class="dot-label">چرا سودیار؟</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="how"><span class="dot-label">چطور کار می‌کند</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="tutorial"><span class="dot-label">ویدئوی آموزش</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="journey"><span class="dot-label">مسیر شروع</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="advantage"><span class="dot-label">مزیت رقابتی</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="audience"><span class="dot-label">مشتری‌های ما</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="webdesign-promo"><span class="dot-label">طراحی سایت</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="pricing"><span class="dot-label">قیمت‌گذاری</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="faq"><span class="dot-label">پرسش‌های متداول</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="about"><span class="dot-label">درباره ما</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="final"><span class="dot-label">شروع کن</span><span class="tick"></span></button>
+  <button type="button" class="dot-item" data-target="contact"><span class="dot-label">تماس با ما</span><span class="tick"></span></button>
+</nav>
+
+<div class="section-counter" id="sectionCounter">
+  <span class="idx" id="counterIdx">۰۱ / ۱۲</span><span class="sep">—</span><span id="counterLabel">خانه</span>
+</div>
+
+<header>
+  <div class="wrap row">
+    <a href="#hero" class="logo"><span class="mark"><svg viewBox="34 50 114 114" fill="currentColor" aria-hidden="true" focusable="false"><rect x="40" y="140" width="118" height="18" rx="9" ry="9"/><rect x="44" y="112" width="22" height="40" rx="9" ry="9"/><rect x="82" y="86" width="22" height="66" rx="9" ry="9"/><rect x="120" y="56" width="22" height="96" rx="9" ry="9"/></svg></span> سودیار</a>
+    <nav class="main-nav">
+      <a href="#problem">چرا سودیار؟</a>
+      <a href="#how">چطور کار می‌کند</a>
+      <a href="#tutorial">ویدئوی آموزش</a>
+      <a href="#journey">مسیر شروع</a>
+      <a href="#audience">مشتری‌های ما</a>
+      <a href="#pricing">قیمت‌گذاری</a>
+      <a href="#faq">سوالات متداول</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس با ما</a>
+    </nav>
+    <div class="header-cta">
+      <a href="login.html" class="login-link">ورود</a>
+      <a href="#pricing" class="btn btn-primary">شروع رایگان</a>
+      <button class="nav-toggle" id="navToggle" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="wrap mobile-nav" id="mobileNav">
+    <a href="#problem">چرا سودیار؟</a>
+    <a href="#how">چطور کار می‌کند</a>
+    <a href="#tutorial">ویدئوی آموزش</a>
+    <a href="#journey">مسیر شروع</a>
+    <a href="#audience">مشتری‌های ما</a>
+    <a href="#pricing">قیمت‌گذاری</a>
+    <a href="#faq">سوالات متداول</a>
+    <a href="#about">درباره ما</a>
+    <a href="#contact">تماس با ما</a>
+  </div>
+</header>
+
+<div id="fullpage">
+
+<section id="hero" class="section fp-section hero" data-theme="dark" data-label="خانه">
+  <div id="hero-particles" class="hero-particles" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">حسابداری بدون لمس</span>
+      <h1 class="anim-right">فروش می‌کنی، <em>سودیار</em> حساب می‌کند.</h1>
+      <p class="lede anim-left">برای فروشنده‌های آنلاین، پیج‌های اینستاگرامی، مغازه‌دارها و فریلنسرهایی که وقت درگیر شدن با نرم‌افزار حسابداری پیچیده رو ندارن. سودیار از روی فروش‌های سایتت و گزارش بانکی‌ت، خودش همه‌چیز رو ثبت می‌کنه؛ بدون ورود دستی، بدون دانش حسابداری.</p>
+      <div class="cta-row anim-stagger">
+        <a href="#pricing" class="btn btn-primary">شروع رایگان</a>
+        <a href="#how" class="btn btn-ghost">ببین چطور کار می‌کند ↓</a>
+      </div>
+      <div class="trust">
+        <span><i class="dot"></i>بدون اتصال مستقیم به حساب بانکی</span>
+        <span><i class="dot"></i>راه‌اندازی در چند دقیقه</span>
+        <span><i class="dot"></i>بدون نیاز به دانش حسابداری</span>
+      </div>
+    </div>
+
+    <div class="ledger-widget reveal" aria-hidden="true">
+      <div class="chip income c1"><i class="tag"></i> فروش سایت — ۴۸۰,۰۰۰</div>
+      <div class="chip expense c2"><i class="tag"></i> برداشت بانکی — ۱۲۰,۰۰۰</div>
+      <div class="chip income c3"><i class="tag"></i> واریز بانکی — ۹۶۰,۰۰۰</div>
+      <div class="chip expense c4"><i class="tag"></i> هزینه نامشخص — ۶۵,۰۰۰</div>
+      <div class="chip income c5"><i class="tag"></i> فاکتور فروش — ۳۱۰,۰۰۰</div>
+      <div class="result">
+        <div class="label">سود خالص این ماه</div>
+        <div class="amount">۱,۵۶۵,۰۰۰ تومان</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="section fp-section on-paper" data-theme="light" data-label="چرا سودیار؟">
+  <div class="wrap">
+    <div class="stat-banner reveal">
+      <img class="stat-mascot" src="assets/img/mascot-thinking.png" alt="" width="183" height="472" loading="lazy">
+      <div class="stat-banner-text">
+        <h3 class="stat-title">سود واقعی، برای اکثر فروشنده‌ها یک راز می‌مونه</h3>
+        <div class="stat-row">
+          <span class="big">۷۰٪+</span>
+          <p>از فروشندگان آنلاین، فریلنسرها و مغازه‌دارها حوصله‌ی نرم‌افزارهای حسابداری پیچیده رو ندارن — و آخر ماه واقعاً نمی‌دونن چقدر سود کردن.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <img class="glyph" src="assets/icons/pain-systems.png" alt="" width="88" height="88" loading="lazy">
+        <h3>فروش، انبار و بانک از هم جدا</h3>
+        <p>هر بخش از کسب‌وکار یک‌جا ثبت می‌شه؛ هیچ‌کدوم با هم حرف نمی‌زنن.</p>
+      </div>
+      <div class="pain-card reveal">
+        <img class="glyph" src="assets/icons/pain-profit.png" alt="" width="88" height="88" loading="lazy">
+        <h3>سود واقعی، یک معمای ماهانه</h3>
+        <p>آخر ماه که می‌رسه، هیچ عدد روشنی از سود واقعی در دست نیست.</p>
+      </div>
+      <div class="pain-card reveal">
+        <img class="glyph" src="assets/icons/pain-overdue.png" alt="" width="88" height="88" loading="lazy">
+        <h3>کاری که همیشه عقب می‌افتد</h3>
+        <p>حسابداری تبدیل شده به کاری که هر ماه به تعویق می‌افته و استرس‌زاست.</p>
+      </div>
+      <div class="pain-card reveal">
+        <img class="glyph" src="assets/icons/pain-complex.png" alt="" width="88" height="88" loading="lazy">
+        <h3>نرم‌افزارهای حسابداری، پیچیده</h3>
+        <p>ابزارهای موجود برای حسابدار طراحی شدن، نه برای یک فروشنده‌ی مشغول.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section fp-section on-ink" data-theme="dark" data-label="چطور کار می‌کند">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">راه‌حل ما</span>
+      <h2 class="anim-right">دو منبع اطلاعات، یک حساب‌وکتاب روشن</h2>
+      <p class="anim-left">سودیار چیزی از تو نمی‌خواد جز همون کارهایی که همین الان هم انجام می‌دی — فروش کردن، و یک نگاه به صورت‌حساب بانکی.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-card reveal">
+        <span class="step-no">۱</span>
+        <h3>فروش در سایتت انجام می‌شود</h3>
+        <ul>
+          <li>فاکتور فروش به‌صورت خودکار ساخته می‌شود</li>
+          <li>پیامک تأیید برای مشتری ارسال می‌شود</li>
+          <li>دریافت وجه ثبت می‌شود</li>
+          <li>موجودی انبار به‌صورت خودکار کم می‌شود</li>
+        </ul>
+      </div>
+
+      <div class="flow-arrow reveal">+</div>
+
+      <div class="flow-card reveal">
+        <span class="step-no">۲</span>
+        <h3>گزارش بانکی‌ات را اکسل وارد می‌کنی</h3>
+        <ul>
+          <li>برداشت‌ها به‌عنوان «هزینه» شناسایی می‌شوند</li>
+          <li>واریزها به‌عنوان «درآمد» شناسایی می‌شوند</li>
+          <li>هیچ اتصال مستقیمی به حساب بانکی برقرار نمی‌شود</li>
+          <li>فایل اکسل پس از پردازش حذف یا رمزنگاری می‌شود</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flow-result reveal">
+      <span class="flow-result-icon" aria-hidden="true">↓</span>
+      <div class="flow-result-text">
+        <strong>یک دفتر حساب‌وکتاب ساده، شفاف و همیشه به‌روز</strong>
+        <span>بدون این‌که خودت یک ردیف هم دستی وارد کنی</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tutorial" class="section fp-section on-paper-2" data-theme="light" data-label="ویدئوی آموزش">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ویدئوی آموزش</span>
+      <h2 class="anim-right">هر بخش سودیار، یک ویدئوی کوتاه جدا</h2>
+      <p class="anim-left">لازم نیست یک ویدئوی طولانی ببینی؛ هر فصل مخصوص یک کار مشخصه — همون قسمتی که الان بهش نیاز داری رو انتخاب کن.</p>
+    </div>
+    <div class="video-chapters">
+      <button type="button" class="video-chapter reveal" data-video-open data-video-src="assets/video/tutorial-sale-invoice.mp4" data-video-title="۱. صدور فاکتور فروش">
+        <span class="vc-thumb">
+          <img class="glyph" src="assets/icons/activity-shop.png" alt="" width="40" height="40" loading="lazy">
+          <img class="play-icon" src="assets/icons/play-button.png" alt="" width="40" height="46" loading="lazy">
+        </span>
+        <span class="vc-body">
+          <span class="vc-no">فصل ۱</span>
+          <span class="vc-title">صدور فاکتور فروش</span>
+        </span>
+      </button>
+
+      <button type="button" class="video-chapter reveal" data-video-open data-video-src="assets/video/tutorial-purchase-invoice.mp4" data-video-title="۲. صدور فاکتور خرید">
+        <span class="vc-thumb">
+          <img class="glyph" src="assets/icons/step-inventory.png" alt="" width="40" height="40" loading="lazy">
+          <img class="play-icon" src="assets/icons/play-button.png" alt="" width="40" height="46" loading="lazy">
+        </span>
+        <span class="vc-body">
+          <span class="vc-no">فصل ۲</span>
+          <span class="vc-title">صدور فاکتور خرید</span>
+        </span>
+      </button>
+
+      <button type="button" class="video-chapter reveal" data-video-open data-video-src="assets/video/tutorial-bank-excel.mp4" data-video-title="۳. وارد کردن اکسل بانک">
+        <span class="vc-thumb">
+          <img class="glyph" src="assets/icons/pain-systems.png" alt="" width="40" height="40" loading="lazy">
+          <img class="play-icon" src="assets/icons/play-button.png" alt="" width="40" height="46" loading="lazy">
+        </span>
+        <span class="vc-body">
+          <span class="vc-no">فصل ۳</span>
+          <span class="vc-title">وارد کردن اکسل بانک</span>
+        </span>
+      </button>
+
+      <button type="button" class="video-chapter reveal" data-video-open data-video-src="assets/video/tutorial-profit-report.mp4" data-video-title="۴. گرفتن گزارش سود">
+        <span class="vc-thumb">
+          <img class="glyph" src="assets/icons/pain-profit.png" alt="" width="40" height="40" loading="lazy">
+          <img class="play-icon" src="assets/icons/play-button.png" alt="" width="40" height="46" loading="lazy">
+        </span>
+        <span class="vc-body">
+          <span class="vc-no">فصل ۴</span>
+          <span class="vc-title">گرفتن گزارش سود</span>
+        </span>
+      </button>
+
+      <button type="button" class="video-chapter reveal" data-video-open data-video-src="assets/video/tutorial-store-connect.mp4" data-video-title="۵. اتصال سودیار به فروشگاه">
+        <span class="vc-thumb">
+          <img class="glyph" src="assets/icons/step-connect.png" alt="" width="40" height="40" loading="lazy">
+          <img class="play-icon" src="assets/icons/play-button.png" alt="" width="40" height="46" loading="lazy">
+        </span>
+        <span class="vc-body">
+          <span class="vc-no">فصل ۵</span>
+          <span class="vc-title">اتصال سودیار به فروشگاه</span>
+        </span>
+      </button>
+
+      <button type="button" class="video-chapter reveal" data-video-open data-video-src="assets/video/tutorial-inventory.mp4" data-video-title="۶. مدیریت انبار و موجودی">
+        <span class="vc-thumb">
+          <img class="glyph" src="assets/icons/activity-online-store.png" alt="" width="40" height="40" loading="lazy">
+          <img class="play-icon" src="assets/icons/play-button.png" alt="" width="40" height="46" loading="lazy">
+        </span>
+        <span class="vc-body">
+          <span class="vc-no">فصل ۶</span>
+          <span class="vc-title">مدیریت انبار و موجودی</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="section fp-section on-paper-2" data-theme="light" data-label="مسیر شروع">
+  <div class="journey-orbs" id="journeyOrbs" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">مسیر شروع</span>
+      <h2 class="anim-right">از نصب تا اولین گزارش سود، چهار قدم</h2>
+      <p class="anim-left">مسیری که برای هرکسی — حتی بدون یک کلمه دانش حسابداری — قابل فهم و امن طراحی شده.</p>
+    </div>
+
+    <div class="timeline">
+      <svg class="timeline-path" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="pathGrad" x1="100%" y1="0%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#E4BE6E"/>
+            <stop offset="100%" stop-color="#2F6B4F"/>
+          </linearGradient>
+          <marker id="arrowHead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0.5 L9,5 L0,9.5 Q2.6,5 0,0.5 Z" fill="#C89B3C"/>
+          </marker>
+        </defs>
+        <path d="M 890 70 C 760 70 760 150 630 150" fill="none" stroke="url(#pathGrad)" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round" marker-end="url(#arrowHead)"/>
+        <path d="M 630 150 C 500 150 500 70 370 70" fill="none" stroke="url(#pathGrad)" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round" marker-end="url(#arrowHead)"/>
+        <path d="M 370 70 C 240 70 240 150 110 150" fill="none" stroke="url(#pathGrad)" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round" marker-end="url(#arrowHead)"/>
+      </svg>
+      <div class="timeline-track">
+        <div class="tstep reveal">
+          <img class="step-icon" src="assets/icons/step-login.png" alt="" width="120" height="120" loading="lazy">
+          <div class="tstep-body">
+            <h3>ورود امن با موبایل</h3>
+            <p>شماره موبایل، کد پیامکی، و در صورت تمایل رمز عبور و ورود دومرحله‌ای.</p>
+          </div>
+        </div>
+        <div class="tstep reveal">
+          <img class="step-icon" src="assets/icons/step-connect.png" alt="" width="120" height="120" loading="lazy">
+          <div class="tstep-body">
+            <h3>اتصال امن به سایت فروش</h3>
+            <p>فقط با یک کلید دسترسیِ خواندنی؛ بدون هیچ ریسکی برای فروشگاهت.</p>
+          </div>
+        </div>
+        <div class="tstep reveal">
+          <img class="step-icon" src="assets/icons/step-inventory.png" alt="" width="120" height="120" loading="lazy">
+          <div class="tstep-body">
+            <h3>ثبت خودکار کالا و انبار</h3>
+            <p>سودیار کالاها، قیمت و موجودی رو می‌خونه و انبار داخلی می‌سازه.</p>
+          </div>
+        </div>
+        <div class="tstep reveal">
+          <img class="step-icon" src="assets/icons/step-first-sale.png" alt="" width="120" height="120" loading="lazy">
+          <div class="tstep-body">
+            <h3>اولین فروش، اتوماسیون کامل</h3>
+            <p>فاکتور، دریافت وجه، پیامک تأیید و کسر موجودی — بدون این‌که کاری کنی.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="advantage" class="section fp-section on-ink" data-theme="dark" data-label="مزیت رقابتی">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">مزیت رقابتی</span>
+      <h2 class="anim-right">ساده به‌جای پیچیده، امن به‌جای پرریسک</h2>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card reveal">
+        <img class="glyph" src="assets/icons/adv-lock.png" alt="" width="84" height="84" loading="lazy">
+        <h3>بدون اتصال مستقیم به بانک</h3>
+        <p>گزارش بانکی رو خودت وارد می‌کنی؛ سودیار هیچ‌وقت مستقیم به حساب بانکی‌ات وصل نمی‌شه.</p>
+      </div>
+      <div class="adv-card reveal">
+        <img class="glyph" src="assets/icons/adv-simple.png" alt="" width="84" height="84" loading="lazy">
+        <h3>تمرکز روی سادگی، نه پیچیدگی</h3>
+        <p>هیچ اصطلاح حسابداری، هیچ فرم پیچیده. فقط عددهایی که برات معنی دارن.</p>
+      </div>
+      <div class="adv-card reveal">
+        <img class="glyph" src="assets/icons/adv-touchfree.png" alt="" width="84" height="84" loading="lazy">
+        <h3>حسابداری بدون لمس</h3>
+        <p>یک‌بار وصل می‌شی، بعدش سودیار خودش کار رو ادامه می‌ده.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="audience" class="section fp-section on-paper" data-theme="light" data-label="مشتری‌های ما">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">مشتری‌های ما</span>
+      <h2 class="anim-right">سودیار برای چه کسب‌وکارهایی ساخته شده</h2>
+    </div>
+  </div>
+  <div class="aud-photo-grid">
+    <div class="aud-photo reveal">
+      <img src="assets/img/aud-store.jpg" alt="فروشگاه‌های آنلاین کوچک" loading="lazy">
+      <span class="aud-photo-overlay" aria-hidden="true"></span>
+      <span class="aud-photo-caption"><h3>فروشگاه‌های آنلاین کوچک</h3></span>
+    </div>
+    <div class="aud-photo reveal">
+      <img src="assets/img/aud-instagram.jpg" alt="پیج‌های اینستاگرامی فروش" loading="lazy">
+      <span class="aud-photo-overlay" aria-hidden="true"></span>
+      <span class="aud-photo-caption"><h3>پیج‌های اینستاگرامی فروش</h3></span>
+    </div>
+    <div class="aud-photo reveal">
+      <img src="assets/img/aud-freelancer.jpg" alt="فریلنسرها" loading="lazy">
+      <span class="aud-photo-overlay" aria-hidden="true"></span>
+      <span class="aud-photo-caption"><h3>فریلنسرها</h3></span>
+    </div>
+    <div class="aud-photo reveal">
+      <img src="assets/img/aud-shopkeeper.jpg" alt="مغازه‌دارهایی که از حسابداری فراری‌اند" loading="lazy">
+      <span class="aud-photo-overlay" aria-hidden="true"></span>
+      <span class="aud-photo-caption"><h3>مغازه‌دارهایی که از حسابداری فراری‌اند</h3></span>
+    </div>
+  </div>
+</section>
+
+<section id="webdesign-promo" class="section fp-section fp-auto-height on-ink" data-theme="dark" data-label="طراحی سایت اختصاصی">
+  <div class="wrap">
+    <div class="section-head promo-head">
+      <span class="eyebrow">همکار ما در طراحی سایت</span>
+      <h2 class="anim-right">یک سایت حرفه‌ای هم برای کسب‌وکارت می‌خواهی؟</h2>
+    </div>
+    <a class="promo-special-btn reveal" href="#contact">
+      <span class="psb-dot" aria-hidden="true"></span>
+      شروع طراحی سایت
+    </a>
+  </div>
+  <a class="promo-banner reveal" href="#contact" aria-label="طراحی سایت اختصاصی برای فروشگاه‌ها و پیج‌های اینستاگرامی، درخواست طراحی سایت">
+    <img src="assets/img/banner-webdesign.jpg" alt="طراحی سایت اختصاصی برای فروشگاه‌ها و پیج‌های اینستاگرامی" loading="lazy" width="1536" height="1024">
+    <span class="promo-glass-bar">
+      <span>برای شروع طراحی سایت کلیک کن</span>
+      <span class="promo-glass-arrow" aria-hidden="true">←</span>
+    </span>
+  </a>
+</section>
+
+<section id="pricing" class="section fp-section on-paper-2" data-theme="light" data-label="قیمت‌گذاری">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">قیمت‌گذاری</span>
+      <h2 class="anim-right">یک اشتراک ساده، متناسب با اندازه‌ی کسب‌وکارت</h2>
+      <p class="anim-left">سه پلن، بدون شرط و شروط پیچیده. ۱۵ روز رایگان امتحان کن، هر وقت خواستی ارتقا بده.</p>
+    </div>
+    <div class="billing-toggle reveal" role="tablist" aria-label="نوع پرداخت اشتراک">
+      <button type="button" class="billing-tab active" data-billing="yearly" role="tab" aria-selected="true">پرداخت سالانه</button>
+      <button type="button" class="billing-tab" data-billing="unlimited" role="tab" aria-selected="false">دسترسی نامحدود (یک‌بار پرداخت)</button>
+    </div>
+    <div class="price-grid" id="priceGrid" data-billing="yearly">
+      <div class="price-card reveal">
+        <span class="trial-badge">۱۵ روز رایگان</span>
+        <h3>پلن پایه</h3>
+        <p class="desc">برای شروع سریع — فروش و بانک، همه خودکار.</p>
+        <p class="billing-note">
+          <span class="billing-yearly">با تمدید سالانه، صرفه‌جویی بیشتر</span>
+          <span class="billing-unlimited">یک‌بار پرداخت، دسترسی برای همیشه</span>
+        </p>
+        <ul>
+          <li>ثبت خودکار فروش و فاکتور</li>
+          <li>پردازش گزارش بانکی</li>
+          <li>صدور فاکتور خرید</li>
+          <li>داشبورد فروش امروز و مانده نقدی</li>
+          <li>تا ۵۰ فاکتور فروش در ماه</li>
+        </ul>
+        <a href="register.html" class="btn btn-ghost-ink">شروع رایگان</a>
+      </div>
+      <div class="price-card featured reveal">
+        <span class="trial-badge">۱۵ روز رایگان</span>
+        <h3>پلن حرفه‌ای</h3>
+        <p class="desc">برای کسب‌وکارهایی که انبار دارن و می‌خوان سود واقعی رو ببینن.</p>
+        <p class="billing-note">
+          <span class="billing-yearly">با تمدید سالانه، صرفه‌جویی بیشتر</span>
+          <span class="billing-unlimited">یک‌بار پرداخت، دسترسی برای همیشه</span>
+        </p>
+        <ul>
+          <li>همه‌ی امکانات پلن پایه</li>
+          <li>فاکتور فروش نامحدود</li>
+          <li>مدیریت انبار و موجودی خودکار</li>
+          <li>گزارش سود و زیان ماهانه</li>
+        </ul>
+        <a href="register.html" class="btn btn-primary">شروع رایگان</a>
+      </div>
+      <div class="price-card enterprise reveal">
+        <span class="trial-badge">قیمت‌گذاری اختصاصی</span>
+        <h3>پلن سازمانی</h3>
+        <p class="desc">برای تیم‌ها و کسب‌وکارهایی با چند فروشگاه یا حجم فروش بالا.</p>
+        <ul>
+          <li>همه‌ی امکانات پلن حرفه‌ای</li>
+          <li>چند فروشگاه و چند کاربر</li>
+          <li>فروش اقساطی و ثبت چک مشتری</li>
+          <li>یادآور خودکار سررسید اقساط</li>
+          <li>پشتیبانی اختصاصی</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost-ink">درخواست مشاوره</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section fp-section on-ink" data-theme="dark" data-label="پرسش‌های متداول">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">پرسش‌های متداول</span>
+      <h2 class="anim-right">قبل از شروع، جواب سوال‌های رایج رو بگیر</h2>
+      <p class="anim-left">اگه بازم سوالی موند، از بخش تماس با ما در خدمتتیم.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span>آیا سودیار مستقیم به حساب بانکی من وصل می‌شه؟</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>نه. سودیار هیچ‌وقت مستقیم به حساب بانکی‌ات وصل نمی‌شه. خودت گزارش بانکی رو به‌صورت اکسل وارد می‌کنی و اپ برداشت‌ها رو به‌عنوان هزینه و واریزها رو به‌عنوان درآمد شناسایی می‌کنه؛ فایل اکسل هم بعد از پردازش حذف یا رمزنگاری می‌شه.</p>
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span>برای استفاده از سودیار باید دانش حسابداری داشته باشم؟</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>نه، اصلاً. سودیار دقیقاً برای کسایی طراحی شده که وقت و حوصله‌ی نرم‌افزارهای حسابداری پیچیده رو ندارن؛ بدون اصطلاح حسابداری، فقط عددهایی که برات معنی دارن.</p>
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span>اتصال به سایت فروشم چطور انجام می‌شه و امنه؟</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>پلتفرم فروشت رو انتخاب می‌کنی (مثلاً ووکامرس) و فقط یک کلید دسترسیِ خواندنی وارد می‌کنی؛ یعنی سودیار فقط می‌تونه کالا و سفارش‌ها رو بخونه، بدون هیچ ریسکی برای فروشگاهت.</p>
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span>فرق پلن پایه و حرفه‌ای چیه؟</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>پلن پایه فروش و بانک رو خودکار می‌کنه با محدودیت فاکتور ماهانه. پلن حرفه‌ای همه‌ی امکانات پایه به‌علاوه‌ی فاکتور نامحدود، مدیریت انبار و موجودی خودکار، و گزارش سود و زیان ماهانه رو داره.</p>
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span>بعد از تموم شدن ۱۵ روز رایگان چه اتفاقی می‌افته؟</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>برای ادامه‌ی استفاده باید یکی از پلن‌ها رو فعال کنی. اطلاعات و سابقه‌ی حساب‌وکتابت همون‌جا محفوظ می‌مونه و به‌محض فعال‌سازی اشتراک، دوباره در دسترسته.</p>
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span>اگه تلگرام فیلتر بشه یا اینترنت قطع بشه، چطور بهتون دسترسی داشته باشم؟</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>پشتیبانی سودیار روی «بله» هم هست؛ چون یک پیام‌رسان داخلیه، معمولاً همون موقع‌هایی که تلگرام یا اینترنت بین‌الملل مشکل داره، همچنان در دسترسه.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section fp-section on-paper" data-theme="light" data-label="درباره ما">
+  <div class="wrap about-wrap">
+    <div class="about-3d" id="about3dMount" data-model-src="assets/models/sudyar-about-model.glb">
+      <div class="about-3d-skeleton" aria-hidden="true">
+        <span class="about-3d-skeleton-bar b1"></span>
+        <span class="about-3d-skeleton-bar b2"></span>
+        <span class="about-3d-skeleton-bar b3"></span>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">درباره ما</span>
+      <h2 class="anim-right">چرا سودیار رو ساختیم</h2>
+      <p class="anim-left">بیش از ۷۰٪ فروشنده‌های آنلاین، پیج‌های اینستاگرامی، فریلنسرها و مغازه‌دارها حوصله‌ی نرم‌افزارهای حسابداری پیچیده رو ندارن. فروش، انبار، دریافت وجه و بانکشون از هم جداست و آخر ماه هم واقعاً نمی‌دونن چقدر سود کردن.</p>
+      <p class="anim-left">سودیار دقیقاً برای همین ساخته شده: از روی فروش و گزارش بانکی‌ت، خودش حساب‌وکتاب کسب‌وکارت رو می‌سازه — بدون ورود دستی، بدون دانش حسابداری. هدفمون اینه که ساده‌ترین سیستم مدیریت مالی فروشنده‌های آنلاین ایران باشیم.</p>
+      <div class="about-tags anim-stagger">
+        <span class="about-tag">حسابداری بدون لمس</span>
+        <span class="about-tag">بدون اتصال مستقیم به بانک</span>
+        <span class="about-tag">سادگی، نه پیچیدگی</span>
+      </div>
+    </div>
+    <div class="about-quote reveal">
+      <span class="about-quote-mark" aria-hidden="true">”</span>
+      <p>حسابداری بدون لمس، برای فروشنده‌ای که وقت نداره درگیر عدد و رقم بشه.</p>
+      <span class="about-quote-sign">تیم سودیار</span>
+    </div>
+  </div>
+</section>
+
+<section id="final" class="section fp-section final-cta" data-theme="light" data-label="شروع کن">
+  <div id="final-particles" class="final-particles" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow" style="color:#1C1404;">چشم‌انداز سودیار</span>
+    <h2 class="anim-right">ساده‌ترین سیستم مدیریت مالی فروشنده‌های آنلاین ایران</h2>
+    <p class="anim-left">همین امروز شروع کن؛ بدون کارت بانکی، بدون تعهد، فقط چند دقیقه وقت.</p>
+    <div class="cta-row anim-stagger">
+      <a href="#pricing" class="btn btn-primary">شروع رایگان سودیار</a>
+      <a href="#how" class="btn btn-ghost-ink">بیشتر بدان</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section fp-section on-ink contact-section" data-theme="dark" data-label="تماس با ما">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">تماس با ما</span>
+      <h2 class="anim-right">سوالی داری؟ یک پیام تا جواب گرفتن فاصله داری</h2>
+      <p class="anim-left">قبل از شروع، هر سوالی درباره‌ی سودیار داشته باشی، از هر کدوم از راه‌های زیر می‌تونی باهامون در تماس باشی.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a href="tel:+982191000000" class="contact-card reveal">
+        <span class="icon-box">
+          <svg class="glyph-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20.4c0 .6-.4 1-1 1C10.6 21.4 2.6 13.4 2.6 3.7c0-.6.4-1 1-1H7c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/>
+          </svg>
+        </span>
+        <h3>تماس تلفنی</h3>
+        <p>پشتیبانی سودیار</p>
+        <span class="contact-value">۰۲۱-۹۱۰۰۰۰۰۰</span>
+      </a>
+
+      <a href="mailto:support@sudyar.app" class="contact-card reveal">
+        <span class="icon-box">
+          <svg class="glyph-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.7" y="4.8" width="18.6" height="14.4" rx="2.4"/>
+            <path d="m3.5 6 8.5 6.5L20.5 6"/>
+          </svg>
+        </span>
+        <h3>ایمیل</h3>
+        <p>پشتیبانی و همکاری</p>
+        <span class="contact-value">support@sudyar.app</span>
+      </a>
+
+      <a href="https://t.me/sudyar_app" target="_blank" rel="noopener" class="contact-card reveal">
+        <span class="icon-box">
+          <svg class="glyph-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 4.5 3.4 11.2c-.8.3-.8 1.5.1 1.7l4.3 1.2 1.6 4.9c.3.8 1.3 1 1.9.4l2.3-2.3 4.3 3.2c.7.5 1.7.1 1.9-.7L22 5.3c.2-.9-.7-1.6-1-.8Z"/>
+            <path d="M8.5 14.5 18 6.7"/>
+          </svg>
+        </span>
+        <h3>پیام در تلگرام</h3>
+        <p>پاسخ سریع، بدون تماس تلفنی</p>
+        <span class="contact-value">t.me/sudyar_app</span>
+      </a>
+    </div>
+
+    <div class="flow-result contact-hours reveal">
+      <span class="flow-result-icon" aria-hidden="true">⏱</span>
+      <div class="flow-result-text">
+        <strong>ساعت پاسخگویی: شنبه تا چهارشنبه، ۹ تا ۱۷</strong>
+        <span>خارج از این ساعت‌ها هم پیام بذاری، همون روز کاری بعد جواب می‌گیری</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /#fullpage -->
+
+<footer id="footer" data-theme="dark">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand" style="max-width:320px;">
+        <a href="#hero" class="logo"><span class="mark"><svg viewBox="34 50 114 114" fill="currentColor" aria-hidden="true" focusable="false"><rect x="40" y="140" width="118" height="18" rx="9" ry="9"/><rect x="44" y="112" width="22" height="40" rx="9" ry="9"/><rect x="82" y="86" width="22" height="66" rx="9" ry="9"/><rect x="120" y="56" width="22" height="96" rx="9" ry="9"/></svg></span> سودیار</a>
+        <p>حسابداری بدون لمس، برای فروشنده‌های آنلاین، پیج‌های اینستاگرامی، فریلنسرها و مغازه‌دارها.</p>
+      </div>
+      <div class="footer-col">
+        <h4>محصول</h4>
+        <ul>
+          <li><a href="#how">چطور کار می‌کند</a></li>
+          <li><a href="#journey">مسیر شروع</a></li>
+          <li><a href="#pricing">قیمت‌گذاری</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>شرکت</h4>
+        <ul>
+          <li><a href="#about">درباره ما</a></li>
+          <li><a href="#contact">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>حقوقی</h4>
+        <ul>
+          <li><a href="#">حریم خصوصی</a></li>
+          <li><a href="#">قوانین استفاده</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bale reveal">
+      <span class="icon-box">
+        <svg class="glyph-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3.6c-5.2 0-9.4 3.4-9.4 7.6 0 2.5 1.4 4.7 3.6 6.1-.1 1-.5 2.2-1.4 3.4 1.7-.3 3.1-1 4.2-1.8.9.2 1.9.3 3 .3 5.2 0 9.4-3.4 9.4-7.6s-4.2-8-9.4-8Z"/>
+        </svg>
+      </span>
+      <div class="footer-bale-text">
+        <strong>پشتیبانی سودیار حالا توی «بله» هم هست</strong>
+        <span>وقتی تلگرام فیلتره یا اینترنت بین‌الملل قطعه، از همون‌جا در دسترسیم — یه‌جور اطمینان اضافه که هیچ‌وقت بی‌پاسخ نمونی.</span>
+      </div>
+      <a href="https://ble.im/sudyar_support" target="_blank" rel="noopener" class="btn btn-primary btn-sm">پیام در بله</a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 1405 سودیار. همه‌ی حقوق محفوظ است.</span>
+      <span>ساخته‌شده برای فروشنده‌های واقعی</span>
+    </div>
+  </div>
+</footer>
+
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal-backdrop" data-video-close></div>
+  <div class="video-modal-box">
+    <button type="button" class="video-modal-close" data-video-close aria-label="بستن ویدئو">✕</button>
+    <span class="video-modal-title" id="tutorialVideoTitle"></span>
+    <video id="tutorialVideo" controls playsinline>
+      مرورگر شما از پخش این ویدئو پشتیبانی نمی‌کند.
+    </video>
+  </div>
+</div>
+
+<script src="assets/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="js/site-alerts.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/main.js"></script>
+<script defer src="js/about-3d.js"></script>
+
+</body>
+</html>

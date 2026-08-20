@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F3EEDE">
+<title>ورود | سودیار</title>
+<meta name="description" content="وارد حساب سودیار خودت شو.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+<!-- Google Identity Services — the one library on this site that can't be
+     self-hosted; it must be loaded live from Google to actually work. If
+     there's no internet, onerror below hides the button and shows a
+     fallback message instead of leaving a dead button on the page. -->
+<script src="https://accounts.google.com/gsi/client?hl=fa" async defer
+  onload="window.__googleReady = true; window.__onGoogleReady && window.__onGoogleReady();"
+  onerror="window.__onGoogleUnavailable && window.__onGoogleUnavailable();"></script>
+</head>
+<body class="auth-body">
+
+<div class="auth-topbar">
+  <div class="wrap row">
+    <a href="index.html" class="logo"><span class="mark"><svg viewBox="34 50 114 114" fill="currentColor" aria-hidden="true" focusable="false"><rect x="40" y="140" width="118" height="18" rx="9" ry="9"/><rect x="44" y="112" width="22" height="40" rx="9" ry="9"/><rect x="82" y="86" width="22" height="66" rx="9" ry="9"/><rect x="120" y="56" width="22" height="96" rx="9" ry="9"/></svg></span> سودیار</a>
+    <a href="index.html" class="auth-back">بازگشت به صفحه اصلی ←</a>
+  </div>
+</div>
+
+<div class="auth-shell">
+  <div class="auth-card">
+
+    <!-- STEP: main login -->
+    <section class="step active" data-step="main">
+      <div class="auth-head">
+        <span class="eyebrow">ورود به سودیار</span>
+        <h1>خوش برگشتی</h1>
+        <p>با ایمیل و رمز عبور وارد شو، یا با یک کلیک از حساب گوگل استفاده کن.</p>
+      </div>
+
+      <div class="google-btn-box" id="googleLoginBtnBox">
+        <div id="googleLoginBtn" class="google-btn-slot"></div>
+      </div>
+      <div class="google-unavailable" id="googleUnavailableLogin" style="display:none;">
+        ورود با گوگل نیاز به اتصال اینترنت داره و الان در دسترس نیست.
+      </div>
+
+      <div class="auth-divider"><span>یا</span></div>
+
+      <div class="field" id="emailLoginField">
+        <label for="emailLogin">ایمیل</label>
+        <div class="input-wrap">
+          <input type="email" id="emailLogin" class="ltr-input" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="error">ایمیل معتبر نیست.</div>
+      </div>
+      <div class="field" id="pwLoginField">
+        <label for="pwLogin">رمز عبور</label>
+        <div class="input-wrap">
+          <input type="password" id="pwLogin" class="ltr-input" placeholder="رمز عبورت رو وارد کن" autocomplete="current-password">
+          <button type="button" class="toggle-visibility" data-target="pwLogin">نمایش</button>
+        </div>
+        <div class="error">ایمیل یا رمز عبور اشتباه است.</div>
+      </div>
+      <div style="text-align:left;margin-top:-6px;margin-bottom:4px;">
+        <button type="button" id="forgotLink" style="background:none;border:none;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--emerald);cursor:pointer;padding:0;">رمز عبور رو فراموش کردی؟</button>
+      </div>
+      <div class="auth-actions">
+        <button type="button" class="btn btn-primary" id="passwordLoginBtn">ورود</button>
+      </div>
+
+      <div class="btn-link-row">حساب نداری؟ <a href="register.html">ثبت‌نام کن</a></div>
+    </section>
+
+    <!-- STEP: forgot password — email -->
+    <section class="step" data-step="fp-email">
+      <button type="button" class="btn-back-step" data-back="main">→ بازگشت</button>
+      <div class="auth-head">
+        <span class="eyebrow">بازیابی رمز عبور</span>
+        <h1>ایمیلت رو وارد کن</h1>
+        <p>لینک بازیابی رمز عبور رو براش می‌فرستیم.</p>
+      </div>
+      <div class="field" id="fpEmailField">
+        <label for="fpEmail">ایمیل</label>
+        <div class="input-wrap">
+          <input type="email" id="fpEmail" class="ltr-input" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="error">ایمیل معتبر نیست.</div>
+      </div>
+      <div class="auth-actions">
+        <button type="button" class="btn btn-primary" id="fpSendBtn">ارسال لینک بازیابی</button>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="assets/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="js/site-alerts.js"></script>
+<script src="js/auth.js"></script>
+<script>
+(function(){
+  function showStep(name){
+    document.querySelectorAll(".step").forEach(s => s.classList.toggle("active", s.dataset.step === name));
+  }
+  function setFieldError(fieldEl, on){ fieldEl.classList.toggle("has-error", !!on); }
+  document.querySelectorAll("[data-back]").forEach(btn => {
+    btn.addEventListener("click", () => showStep(btn.dataset.back));
+  });
+
+  // ---- Google sign-in (real Google Identity Services) ----
+  function handleGoogleResult(res){
+    if (!res.ok){ SiteAlert.toast("error", "ورود با گوگل ناموفق بود."); return; }
+    const account = getDemoAccount() || {};
+    account.email = res.email;
+    account.name = res.name;
+    account.picture = res.picture;
+    account.provider = "google";
+    setDemoAccount(account);
+    const hello = res.name ? `${res.name}، خوش اومدی! ` : "خوش اومدی! ";
+    SiteAlert.success("ورود موفق", hello + "داری به داشبورد سودیار منتقل می‌شی.")
+      .then(() => { window.location.href = "index.html"; });
+  }
+  function showGoogleUnavailable(){
+    document.getElementById("googleLoginBtnBox").style.display = "none";
+    document.getElementById("googleUnavailableLogin").style.display = "block";
+  }
+  window.__onGoogleReady = () => {
+    renderGoogleButton(document.getElementById("googleLoginBtn"), handleGoogleResult, showGoogleUnavailable);
+  };
+  window.__onGoogleUnavailable = showGoogleUnavailable;
+  if (window.__googleReady) window.__onGoogleReady();
+  // if Google's script neither loads nor errors within a few seconds
+  // (e.g. it's silently blocked), fall back instead of leaving a blank box
+  setTimeout(() => {
+    if (!window.__googleReady) showGoogleUnavailable();
+  }, 4000);
+
+  // ---- email + password login ----
+  document.getElementById("passwordLoginBtn").addEventListener("click", () => {
+    const emailField = document.getElementById("emailLoginField");
+    const pwField = document.getElementById("pwLoginField");
+    const email = document.getElementById("emailLogin").value.trim();
+    const pw = document.getElementById("pwLogin").value;
+    if (!isValidEmail(email)){
+      setFieldError(emailField, true);
+      SiteAlert.toast("error", "ایمیل معتبر نیست.");
+      return;
+    }
+    setFieldError(emailField, false);
+
+    // TODO(API): replace this demo check with a real POST /api/auth/login
+    const account = getDemoAccount();
+    const ok = account && account.email === email && pw.length >= 8;
+    if (!ok){
+      setFieldError(pwField, true);
+      SiteAlert.toast("error", "ایمیل یا رمز عبور اشتباه است.");
+      return;
+    }
+    setFieldError(pwField, false);
+
+    SiteAlert.success("ورود موفق", "خوش اومدی! داری به داشبورد سودیار منتقل می‌شی.")
+      .then(() => { window.location.href = "index.html"; });
+  });
+
+  document.querySelectorAll(".toggle-visibility").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const input = document.getElementById(btn.dataset.target);
+      const show = input.type === "password";
+      input.type = show ? "text" : "password";
+      btn.textContent = show ? "پنهان" : "نمایش";
+    });
+  });
+
+  // ---- forgot password ----
+  document.getElementById("forgotLink").addEventListener("click", () => showStep("fp-email"));
+  document.getElementById("fpSendBtn").addEventListener("click", async () => {
+    const fpEmailField = document.getElementById("fpEmailField");
+    const email = document.getElementById("fpEmail").value.trim();
+    if (!isValidEmail(email)){
+      setFieldError(fpEmailField, true);
+      SiteAlert.toast("error", "ایمیل معتبر نیست.");
+      return;
+    }
+    setFieldError(fpEmailField, false);
+    const btn = document.getElementById("fpSendBtn");
+    btn.disabled = true; btn.textContent = "در حال ارسال...";
+    await sendResetEmail(email);
+    btn.disabled = false; btn.textContent = "ارسال لینک بازیابی";
+    SiteAlert.success("ایمیل ارسال شد", `یک لینک بازیابی رمز عبور به ${email} فرستادیم. اگه پیامی نبود، پوشه‌ی اسپم رو هم چک کن.`)
+      .then(() => showStep("main"));
+  });
+})();
+</script>
+</body>
+</html>

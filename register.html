@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F3EEDE">
+<title>ثبت‌نام | سودیار</title>
+<meta name="description" content="در چند قدم ساده، حساب سودیار خودت رو بساز.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+<!-- Google Identity Services — the one library on this site that can't be
+     self-hosted; it must be loaded live from Google to actually work. If
+     there's no internet, onerror below hides the button and shows a
+     fallback message instead of leaving a dead button on the page. -->
+<script src="https://accounts.google.com/gsi/client?hl=fa" async defer
+  onload="window.__googleReady = true; window.__onGoogleReady && window.__onGoogleReady();"
+  onerror="window.__onGoogleUnavailable && window.__onGoogleUnavailable();"></script>
+</head>
+<body class="auth-body">
+
+<div class="auth-topbar">
+  <div class="wrap row">
+    <a href="index.html" class="logo"><span class="mark"><svg viewBox="34 50 114 114" fill="currentColor" aria-hidden="true" focusable="false"><rect x="40" y="140" width="118" height="18" rx="9" ry="9"/><rect x="44" y="112" width="22" height="40" rx="9" ry="9"/><rect x="82" y="86" width="22" height="66" rx="9" ry="9"/><rect x="120" y="56" width="22" height="96" rx="9" ry="9"/></svg></span> سودیار</a>
+    <a href="index.html" class="auth-back">بازگشت به صفحه اصلی ←</a>
+  </div>
+</div>
+
+<div class="auth-shell">
+  <div class="auth-card">
+
+    <div class="auth-progress" id="progressBar">
+      <div class="seg active" data-step="1"><i></i></div>
+      <div class="seg" data-step="2"><i></i></div>
+    </div>
+
+    <!-- STEP 1 — account (email + password, or Google) -->
+    <section class="step active" data-step="1">
+      <div class="auth-head">
+        <span class="eyebrow">ثبت‌نام در سودیار</span>
+        <h1>شروع کنیم</h1>
+        <p>با ایمیل و رمز عبور حساب بساز، یا با یک کلیک از گوگل استفاده کن.</p>
+      </div>
+
+      <div class="google-btn-box" id="googleRegisterBtnBox">
+        <div id="googleRegisterBtn" class="google-btn-slot"></div>
+      </div>
+      <div class="google-unavailable" id="googleUnavailableRegister" style="display:none;">
+        ثبت‌نام با گوگل نیاز به اتصال اینترنت داره و الان در دسترس نیست.
+      </div>
+
+      <div class="auth-divider"><span>یا</span></div>
+
+      <div class="field" id="emailField">
+        <label for="email1">ایمیل</label>
+        <div class="input-wrap">
+          <input type="email" id="email1" class="ltr-input" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="error">ایمیل معتبر نیست.</div>
+      </div>
+
+      <div class="field" id="pwField">
+        <label for="pw1">رمز عبور</label>
+        <div class="input-wrap">
+          <input type="password" id="pw1" class="ltr-input" placeholder="حداقل ۸ کاراکتر" autocomplete="new-password">
+          <button type="button" class="toggle-visibility" data-target="pw1">نمایش</button>
+        </div>
+        <div class="pw-rules">
+          <div class="rule" id="ruleLen"><span class="mark-ico">✓</span> حداقل ۸ کاراکتر</div>
+        </div>
+      </div>
+
+      <div class="field" id="pw2Field">
+        <label for="pw2">تکرار رمز عبور</label>
+        <div class="input-wrap">
+          <input type="password" id="pw2" class="ltr-input" placeholder="رمز عبور رو دوباره وارد کن" autocomplete="new-password">
+          <button type="button" class="toggle-visibility" data-target="pw2">نمایش</button>
+        </div>
+        <div class="error">رمزهای عبور یکسان نیستند.</div>
+      </div>
+
+      <div class="auth-actions">
+        <button type="button" class="btn btn-primary" id="toStep2">ادامه</button>
+      </div>
+
+      <div class="btn-link-row">قبلاً ثبت‌نام کردی؟ <a href="login.html">وارد شو</a></div>
+    </section>
+
+    <!-- STEP 2 — business account -->
+    <section class="step" data-step="2">
+      <button type="button" class="btn-back-step" data-back="1">→ بازگشت</button>
+      <div class="auth-head">
+        <span class="eyebrow">ایجاد حساب کاربری</span>
+        <h1>کمی درباره‌ی کسب‌وکارت بگو</h1>
+        <p>فقط حداقل اطلاعات لازم — همین دو مورد کافیه.</p>
+      </div>
+
+      <div class="field" id="bizNameField">
+        <label for="bizName">نام کسب‌وکار</label>
+        <div class="input-wrap">
+          <input type="text" id="bizName" placeholder="مثلاً: فروشگاه لیلا" autocomplete="organization">
+        </div>
+        <div class="error">نام کسب‌وکار رو وارد کن.</div>
+      </div>
+
+      <div class="field" id="activityField">
+        <label>نوع فعالیت</label>
+        <div class="choice-grid">
+          <label class="choice-card">
+            <input type="radio" name="activity" value="online-store">
+            <span class="box"><span class="ico"><img src="assets/icons/activity-online-store.png" alt=""></span><span class="lbl">فروشگاه آنلاین</span></span>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="activity" value="shop">
+            <span class="box"><span class="ico"><img src="assets/icons/activity-shop.png" alt=""></span><span class="lbl">مغازه</span></span>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="activity" value="freelance">
+            <span class="box"><span class="ico"><img src="assets/icons/activity-freelance.png" alt=""></span><span class="lbl">فریلنسری</span></span>
+          </label>
+        </div>
+        <div class="error">نوع فعالیت رو انتخاب کن.</div>
+      </div>
+
+      <div class="auth-actions">
+        <button type="button" class="btn btn-primary" id="toStep3">ساخت حساب</button>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="assets/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="js/site-alerts.js"></script>
+<script src="js/auth.js"></script>
+<script>
+(function(){
+  let email = "";
+
+  function showStep(n){
+    document.querySelectorAll(".step").forEach(s => s.classList.toggle("active", s.dataset.step === String(n)));
+    document.querySelectorAll(".seg").forEach(s => {
+      const step = Number(s.dataset.step);
+      s.classList.toggle("done", step < n);
+      s.classList.toggle("active", step === n);
+    });
+  }
+  function setFieldError(fieldEl, on){ fieldEl.classList.toggle("has-error", !!on); }
+
+  document.querySelectorAll("[data-back]").forEach(btn => {
+    btn.addEventListener("click", () => showStep(Number(btn.dataset.back)));
+  });
+
+  // ---- Google sign-up (real Google Identity Services; skips password
+  // fields straight to business info once a real Google account is picked) ----
+  function handleGoogleResult(res){
+    if (!res.ok){ SiteAlert.toast("error", "ثبت‌نام با گوگل ناموفق بود."); return; }
+    email = res.email;
+    setDemoAccount({ email, name: res.name, picture: res.picture, provider: "google" });
+    SiteAlert.toast("success", res.name ? `${res.name}، خوش اومدی` : "با حساب گوگلت وارد شدی");
+    showStep(2);
+  }
+  function showGoogleUnavailable(){
+    document.getElementById("googleRegisterBtnBox").style.display = "none";
+    document.getElementById("googleUnavailableRegister").style.display = "block";
+  }
+  window.__onGoogleReady = () => {
+    renderGoogleButton(document.getElementById("googleRegisterBtn"), handleGoogleResult, showGoogleUnavailable);
+  };
+  window.__onGoogleUnavailable = showGoogleUnavailable;
+  if (window.__googleReady) window.__onGoogleReady();
+  setTimeout(() => {
+    if (!window.__googleReady) showGoogleUnavailable();
+  }, 4000);
+
+  // ---- step 1: email + password ----
+  const pw1 = document.getElementById("pw1"), pw2 = document.getElementById("pw2");
+  const ruleLen = document.getElementById("ruleLen");
+  pw1.addEventListener("input", () => {
+    ruleLen.classList.toggle("ok", passwordRules(pw1.value).len);
+  });
+  document.querySelectorAll(".toggle-visibility").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const input = document.getElementById(btn.dataset.target);
+      const show = input.type === "password";
+      input.type = show ? "text" : "password";
+      btn.textContent = show ? "پنهان" : "نمایش";
+    });
+  });
+  document.getElementById("toStep2").addEventListener("click", () => {
+    const emailField = document.getElementById("emailField");
+    const pwField = document.getElementById("pwField");
+    const pw2Field = document.getElementById("pw2Field");
+    const emailVal = document.getElementById("email1").value.trim();
+    let bad = false;
+    if (!isValidEmail(emailVal)){ setFieldError(emailField, true); bad = true; } else setFieldError(emailField, false);
+    if (!passwordRules(pw1.value).len){ setFieldError(pwField, true); bad = true; } else setFieldError(pwField, false);
+    if (pw1.value !== pw2.value || !pw2.value){ setFieldError(pw2Field, true); bad = true; } else setFieldError(pw2Field, false);
+    if (bad){ SiteAlert.toast("error", "لطفاً خطاهای فرم رو بررسی کن."); return; }
+    email = emailVal;
+    setDemoAccount({ email, passwordHash: "demo:" + pw1.value.length, provider: "email" });
+    showStep(2);
+  });
+
+  // ---- step 2: business info ----
+  document.getElementById("toStep3").addEventListener("click", () => {
+    const bizNameField = document.getElementById("bizNameField");
+    const activityField = document.getElementById("activityField");
+    const bizName = document.getElementById("bizName").value.trim();
+    const activity = document.querySelector('input[name="activity"]:checked');
+    let bad = false;
+    if (!bizName){ setFieldError(bizNameField, true); bad = true; } else setFieldError(bizNameField, false);
+    if (!activity){ setFieldError(activityField, true); bad = true; } else setFieldError(activityField, false);
+    if (bad){ SiteAlert.toast("error", "لطفاً خطاهای فرم رو بررسی کن."); return; }
+
+    // TODO(API): send {email, businessName, activityType, provider} to backend.
+    const account = getDemoAccount() || { email };
+    account.businessName = bizName;
+    account.activityType = activity.value;
+    setDemoAccount(account);
+
+    SiteAlert.success("حساب شما ساخته شد", "خوش اومدی به سودیار! مرحله‌ی بعدی، اتصال امن سایت فروشت هست — به‌محض این‌که این بخش آماده بشه از همون‌جا بهت نشون می‌دیم.")
+      .then(() => { window.location.href = "index.html"; });
+  });
+})();
+</script>
+</body>
+</html>

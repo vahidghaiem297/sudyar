@@ -1,0 +1,11 @@
+# dependencies
+node_modules/
+
+# local/private data — never commit real user data
+server/db.json
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+*.log

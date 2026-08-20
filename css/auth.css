@@ -1,0 +1,152 @@
+/* ================= AUTH PAGES (login / register) =================
+   Shares :root tokens, fonts, .btn, .wrap, .logo etc. from style.css.
+   Kept as its own file so the marketing site's CSS stays untouched.
+   Sign-in here is simple email + password, plus a "Sign in with
+   Google" shortcut — no SMS/OTP panel (that belongs to the actual
+   software, not the intro website). */
+
+.auth-body{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse 900px 500px at 85% -10%, rgba(200,155,60,.10), transparent 60%),
+    var(--paper);
+  display:flex;flex-direction:column;
+}
+
+/* ---------- simple top bar (not the full marketing header) ---------- */
+.auth-topbar{padding:22px 0;}
+.auth-topbar .row{display:flex;align-items:center;justify-content:space-between;}
+.auth-topbar .logo{color:var(--text-ink);}
+.auth-topbar .logo .mark{width:32px;height:32px;font-size:16px;}
+.auth-back{
+  display:flex;align-items:center;gap:6px;
+  font-size:13.5px;font-weight:700;color:var(--text-muted);
+}
+.auth-back:hover{color:var(--text-ink);}
+
+/* ---------- shell / card ---------- */
+.auth-shell{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  padding:24px 0 60px;
+}
+.auth-card{
+  width:100%;max-width:440px;
+  background:#fff;border:1px solid rgba(28,42,34,.08);
+  border-radius:20px;
+  padding:36px 34px 30px;
+  box-shadow:0 24px 60px -30px rgba(21,42,32,.25);
+}
+@media (max-width:520px){
+  .auth-card{padding:28px 22px 24px;border-radius:16px;}
+}
+
+.auth-head{margin-bottom:26px;}
+.auth-head .eyebrow{color:var(--emerald);}
+.auth-head h1{
+  margin-top:12px;font-size:23px;font-weight:900;letter-spacing:-.01em;color:var(--text-ink);
+}
+.auth-head p{margin-top:8px;font-size:14px;color:var(--text-muted);}
+
+/* ---------- step progress ---------- */
+.auth-progress{display:flex;align-items:center;gap:6px;margin-bottom:22px;}
+.auth-progress .seg{
+  flex:1;height:4px;border-radius:99px;background:rgba(28,42,34,.09);overflow:hidden;
+}
+.auth-progress .seg i{display:block;height:100%;width:0%;background:var(--gold);border-radius:99px;transition:width .35s ease;}
+.auth-progress .seg.done i{width:100%;}
+.auth-progress .seg.active i{width:55%;}
+
+/* ---------- Google sign-in (real Google Identity Services button) ----------
+   Google renders its own button inside .google-btn-slot — we just give it
+   a centered, full-width slot consistent with the rest of the form. */
+.google-btn-box{display:flex;flex-direction:column;align-items:center;}
+.google-btn-slot{width:100%;display:flex;justify-content:center;min-height:44px;}
+.google-note{margin-top:9px;text-align:center;font-size:12px;color:var(--text-muted);}
+.google-unavailable{
+  text-align:center;font-size:13px;color:var(--text-muted);
+  background:rgba(28,42,34,.05);border:1px dashed rgba(28,42,34,.18);
+  border-radius:12px;padding:12px 14px;line-height:1.7;
+}
+
+.auth-divider{
+  display:flex;align-items:center;gap:12px;margin:20px 0;
+  color:var(--text-muted);font-size:12.5px;font-weight:700;
+}
+.auth-divider::before,.auth-divider::after{content:"";flex:1;height:1px;background:rgba(28,42,34,.1);}
+
+/* ---------- field ---------- */
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:13.5px;font-weight:700;color:var(--text-ink);margin-bottom:8px;}
+.field .hint{margin-top:6px;font-size:12.5px;color:var(--text-muted);}
+.field .error{margin-top:6px;font-size:12.5px;color:var(--expense);display:none;}
+.field.has-error .error{display:block;}
+.field.has-error input{border-color:var(--expense);}
+
+.input-wrap{position:relative;}
+.input-wrap input{
+  width:100%;box-sizing:border-box;
+  padding:14px 16px;border-radius:12px;border:1.5px solid rgba(28,42,34,.14);
+  font-family:inherit;font-size:15px;color:var(--text-ink);background:var(--paper);
+  transition:border-color .15s ease,background .15s ease;
+}
+.input-wrap input:focus{outline:none;border-color:var(--gold);background:#fff;}
+.ltr-input{direction:ltr;unicode-bidi:isolate;}
+.input-wrap input[type="email"],
+.input-wrap input.ltr-input{text-align:left;font-variant-numeric:tabular-nums;}
+/* leave room so left-aligned (ltr) password text never sits under the button */
+.input-wrap:has(.toggle-visibility) input{padding-left:78px;}
+.input-wrap .toggle-visibility{
+  position:absolute;left:8px;top:50%;transform:translateY(-50%);
+  background:var(--paper);border:none;cursor:pointer;color:var(--text-muted);font-size:12.5px;font-weight:700;
+  font-family:inherit;padding:6px 10px;border-radius:8px;
+}
+.input-wrap .toggle-visibility:hover{color:var(--text-ink);}
+
+.resend{margin-top:10px;font-size:13px;color:var(--text-muted);text-align:center;}
+.resend button{background:none;border:none;font-family:inherit;font-weight:700;color:var(--gold);cursor:pointer;font-size:13px;padding:0;}
+.resend button:disabled{color:var(--text-muted);cursor:default;}
+
+/* ---------- password rules ---------- */
+.pw-rules{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.pw-rules .rule{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--text-muted);}
+.pw-rules .rule .mark-ico{
+  width:16px;height:16px;border-radius:50%;flex:none;
+  border:1.5px solid rgba(28,42,34,.2);display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:transparent;transition:all .15s ease;
+}
+.pw-rules .rule.ok{color:var(--emerald);}
+.pw-rules .rule.ok .mark-ico{background:var(--emerald);border-color:var(--emerald);color:#fff;}
+
+/* ---------- activity type radio cards ---------- */
+.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px;}
+@media (max-width:480px){.choice-grid{grid-template-columns:1fr;}}
+.choice-card{position:relative;}
+.choice-card input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0;}
+.choice-card .box{
+  display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;
+  border:1.5px solid rgba(28,42,34,.12);border-radius:14px;padding:16px 10px;
+  transition:border-color .15s ease,background .15s ease;
+}
+.choice-card .box .ico{
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+}
+.choice-card .box .ico img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(21,42,32,.14));}
+.choice-card .box .lbl{font-size:13px;font-weight:700;color:var(--text-ink);}
+.choice-card input:checked + .box{border-color:var(--gold);background:rgba(200,155,60,.08);}
+.choice-card input:focus-visible + .box{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* ---------- steps container ---------- */
+.step{display:none;}
+.step.active{display:block;animation:stepIn .35s ease;padding: 0;}
+@keyframes stepIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+.auth-actions{margin-top:22px;display:flex;flex-direction:column;gap:10px;}
+.auth-actions .btn{width:100%;}
+.btn-link-row{margin-top:18px;text-align:center;font-size:13.5px;color:var(--text-muted);}
+.btn-link-row a{font-weight:800;color:var(--emerald);}
+.btn-back-step{
+  background:none;border:none;font-family:inherit;font-size:13px;font-weight:700;
+  color:var(--text-muted);cursor:pointer;display:flex;align-items:center;gap:5px;margin-bottom:6px;padding:0;
+}
+.btn-back-step:hover{color:var(--text-ink);}
+
